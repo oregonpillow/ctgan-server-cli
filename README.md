@@ -226,11 +226,11 @@ All models and sampled data stored on server database have a timestamp according
 'ss' 2digit second.  
 
 ### model file example (compressed serialized pytorch model):  
-<original file name>_<timestamp>_model.gz  
+"original file name"_"timestamp"_model.gz  
  e.g original_data_demo_20200301t181421_model.gz
 
 ### sampled csv example:  
-<original file name>_<timestamp>_<sample size>_synthetic.csv.gz  
+"original file name"_"timestamp"_"sample size"_synthetic.csv.gz  
 e.g. original_data_demo_20200301t181928_100000_synthetic.csv.gz
 
 
