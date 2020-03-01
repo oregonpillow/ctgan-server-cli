@@ -48,6 +48,8 @@ A quick example:
 
 ``` r
 bash fit.sh
+
+#>
 #>=========================================================
 #>                  ___ _____ ___   _   _  _
 #>                 / __|_   _/ __| /_\ | \| |
@@ -154,6 +156,7 @@ In the case that a user does not want to re-sample data from a model, but instea
 
 ``` r
 bash downloader.sh
+
 #>
 #>=========================================================
 #>                  ___ _____ ___   _   _  _
@@ -233,21 +236,6 @@ All models and sampled data stored on server database have a timestamp according
 ### sampled csv example:  
 "original file name"_"timestamp"_"sample size"_synthetic.csv.gz  
 e.g. original_data_demo_20200301t181928_100000_synthetic.csv.gz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## References
