@@ -38,6 +38,7 @@ pip3 install -r requirements.txt
 
 * CTGAN has been developed and tested on Python 3.5, 3.6 and 3.7
 * ctgan_server package tested on Python 3.6.9, Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-66-generic x86_64)
+* It is assumed you have already added your public ssh key to the known lists on your server
 
 
 ## Example
