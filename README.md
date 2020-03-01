@@ -10,7 +10,7 @@ The package contains the following additional features:
  - As soon as original data has been uploaded and stored in memory for fitting, the original file is deleted from server
  - pytorch models are stored in compressed serialized .gzip for efficient storage
  - synthetic csv files are stored in compressed .gzip on the server
- - .json file containing dictionary of original column dtypes (i.e 'string', 'float', 'int') is stored for each model created, allowing the original dtypes to be restored automatically after sampling
+ - .json file containing dictionary of original column dtypes (i.e 'string', 'float', 'int') is created for each model, allowing the original dtypes to be restored automatically after sampling
  
  
 ### Important Caveats!!!   
