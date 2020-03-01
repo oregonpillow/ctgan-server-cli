@@ -14,7 +14,7 @@ The package contains the following additional features:
  
  
 ### Important Caveats!!!   
-The username/password feature is not secure as the username/passwords are stored in an unencrpyted dictionary. This feature exists for proof of concept and as a simple method to separate models/data between TRUSTED users on the same server.
+The username/password feature is not secure as the username/passwords are stored in an unencrypted dictionary. This feature exists for proof of concept and as a simple method to separate models/data between TRUSTED users on the same server.
  
 In the original ctgan package, you must specify which columns are discrete before fitting. For simplicity I have setup this package to automatically treat 'string' columns as 'discrete' and treat all numerical columns as continuous. In the future I will try and add the ability for users to specify discrete_columns. 
 
