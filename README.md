@@ -21,7 +21,7 @@ In the original ctgan package, you must specify which columns are discrete befor
 
 ## Installation
 
-You can install the development version from
+You can install from
 [GitHub](https://github.com/) by:
 * copying the **ctgan_host** folder onto your local machine
 * copying the **ctgan_server** folder onto your server
