@@ -1,5 +1,5 @@
 
-# ctgan
+# ctgan-server-cli
 This ctgan package provides a simple way to deploy
 [CTGAN](github.com/sdv-dev/CTGAN), a GAN-based data synthesizer onto a remote server.
 The package allows you to create synthetic samples of tabular data i.e confidential or
@@ -215,8 +215,23 @@ Stores sampled synthetic data grouped by user
 user credentials can be updated within the credentials.py file which contains a dictionary called 'username_password' and is automatically imported by the server scripts.
 
 
+## File naming structure
+All models and sampled data stored on server database have a timestamp according to ISO8601 (yyyymmddthhmmss):
+'yyyy' 4digit year  
+'mm' 2digit month  
+'dd' 2digit day  
+'t' time seperator  
+'hh' 2digit hour  
+'mm' 2digit minute  
+'ss' 2digit second.  
 
+### model file example (compressed serialized pytorch model):  
+<original file name>_<timestamp>_model.gz  
+ e.g original_data_demo_20200301t181421_model.gz
 
+### sampled csv example:  
+<original file name>_<timestamp>_<sample size>_synthetic.csv.gz  
+e.g. original_data_demo_20200301t181928_100000_synthetic.csv.gz
 
 
 
