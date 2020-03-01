@@ -10,8 +10,14 @@ The package contains the following additional features:
  - As soon as original data has been uploaded and stored in memory for fitting, the original file is deleted from server
  - pytorch models are stored in compressed serialized .gzip for efficient storage
  - synthetic csv files are stored in compressed .gzip on the server
+ - .json file containing dictionary of original column dtypes (i.e 'string', 'float', 'int') is stored for each model created, allowing the original dtypes to be restored automatically after sampling
  
- ### warning! The username/password feature is not secure as the username/passwords are stored in an unencrpyted dictionary. This feature exists for proof of concept and as a simple method to separate models/data between TRUSTED users on the same server.
+ 
+### Important Caveats!!!   
+The username/password feature is not secure as the username/passwords are stored in an unencrpyted dictionary. This feature exists for proof of concept and as a simple method to separate models/data between TRUSTED users on the same server.
+ 
+In the original ctgan package, you must specify which columns are discrete before fitting. For simplicity I have setup this package to automatically treat 'string' columns as 'discrete' and treat all numerical columns as continuous. In the future I will try and add the ability for users to specify discrete_columns. 
+
 
 ## Installation
 
@@ -20,6 +26,7 @@ You can install the development version from
 * copying the **ctgan_host** folder onto your local machine
 * copying the **ctgan_server** folder onto your server
 * updating the **ctgan_host/config.sh** to point towards your server 
+* Place any original data files (.csv format) into the **ctgan_host_original_data folder**
 
 You will also need to install the required packages onto the server. From the **ctgan_server** folder:
 
@@ -185,6 +192,44 @@ bash downloader.sh
 #>original_data_demo_20200301t181928_100000_synthetic.csv      100% 4480KB   4.4MB/s   00:01 ETA                                                                                                                     
 #>Download complete
 ```
+
+ ## Description of folders inside 'ctgan_server'
+ 
+
+* scp_folder(temp)  
+When a user samples data from a pre-trained model this folder is used to store the data temporarily so the scp protocol knows where to grab data from. Folder is purged after file is sent.
+
+* download_folder(temp)  
+When a user wants to download previously generated synthetic data without resampling (i.e grab the exact same synthetic data again), that particular synthetic data file is temporarily stored here so the scp protocol knows where to grab data from. Folder is purged after file is sent.
+
+* model_database  
+stores all the trained user models grouped by user
+
+* original_data(temp)  
+when the user sends an original data csv to be trained on, the file is temporarily stored here until it's loaded by the fitting script, at which time the file is removed from this folder.
+
+* synthetic_csv_database  
+Stores sampled synthetic data grouped by user
+
+* credentials  
+user credentials can be updated within the credentials.py file which contains a dictionary called 'username_password' and is automatically imported by the server scripts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
