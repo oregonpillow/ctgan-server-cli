@@ -1,7 +1,7 @@
 
 # ctgan-server-cli
 This ctgan package provides a simple way to deploy
-[CTGAN](github.com/sdv-dev/CTGAN), a GAN-based data synthesizer onto a remote server.
+[CTGAN](https://github.com/sdv-dev/CTGAN), a GAN-based data synthesizer onto a remote server.
 The package allows you to create synthetic samples of tabular data i.e confidential or
 proprietary datasets for sharing. For more details and use cases, see 
 [References](#references).
