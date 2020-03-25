@@ -26,7 +26,7 @@ You can install from
 * copying the **ctgan_host** folder onto your local machine
 * copying the **ctgan_server** folder onto your server
 * updating the **ctgan_host/config.sh** to point towards your server 
-* Place any original data files (.csv format) into the **ctgan_host_original_data folder**
+* Place any original data files (.csv format) into the **ctgan_host/original_data folder**
 
 You will also need to install the required packages onto the server. From the **ctgan_server** folder:
 
