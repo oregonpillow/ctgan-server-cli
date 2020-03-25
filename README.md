@@ -26,7 +26,7 @@ You can install from
 * copying the **ctgan_host** folder onto your local machine
 * copying the **ctgan_server** folder onto your server
 * updating the **ctgan_host/config.sh** to point towards your server 
-* Place any original data files (.csv format) into the **ctgan_host/original_data folder**
+* Place any original data files (.csv format) into the **ctgan_host/original_data** folder
 
 You will also need to install the required packages onto the server. From the **ctgan_server** folder:
 
@@ -38,7 +38,7 @@ pip3 install -r requirements.txt
 
 * CTGAN has been developed and tested on Python 3.5, 3.6 and 3.7
 * ctgan_server package tested on Python 3.6.9, Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-66-generic x86_64)
-* It is assumed you have already added your public ssh key to the known lists on your server
+* It is assumed you have already added your public ssh key to the known lists on your server. An [article](https://linuxhandbook.com/add-ssh-public-key-to-server/) explaining how to do this.
 
 
 ## Example
