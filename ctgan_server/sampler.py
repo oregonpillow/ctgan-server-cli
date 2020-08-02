@@ -38,6 +38,15 @@ while not u_name:
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 
+#check scp_folder exists
+scp_dir = str(cwd+'/scp_folder/')
+CHECK_SCP_FOLDER = os.path.isdir(scp_dir)
+if not CHECK_SCP_FOLDER:
+    os.makedirs(scp_dir)
+
+
+
+
 # Check if user model directory exists, if not, end program.
 model_dir = str(cwd+'/model_database/')
 MYDIR = (model_dir + login_username + '/')
