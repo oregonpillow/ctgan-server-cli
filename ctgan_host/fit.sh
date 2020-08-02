@@ -28,6 +28,7 @@ echo --------------------------------------------------------
 echo
 read -p "Please enter original data filename: " VARR
 echo
+ssh $server_address "mkdir $server_original_data"
 scp $VARR $server_address:$server_original_data
 ssh $server_address "python3 -u $server_fit_script"
 
