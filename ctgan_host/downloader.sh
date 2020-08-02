@@ -15,6 +15,7 @@ EOF
 
 source "$(dirname "$0")/config.sh"
 mkdir synthetic_output
+ssh $server_address "mkdir $server_download_folder"
 
 cd "$(dirname "$0")"
 ssh $server_address "python3 -u $server_download_script"
