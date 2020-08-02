@@ -14,7 +14,7 @@ cat << "EOF"
 EOF
 
 source "$(dirname "$0")/config.sh"
-
+mkdir synthetic_output
 
 cd "$(dirname "$0")"
 ssh $server_address "python3 -u $server_sample_script"
