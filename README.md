@@ -31,7 +31,7 @@ You can install from
 You will also need to install the required packages onto the server:
 
 ``` r
-pip3 install ctgan --no-cache-dir. #--no-cache-dir stops ram being used up during install process
+pip3 install ctgan --no-cache-dir
 ```
 
 If you're using a fresh linux server then you'll probably need to install pip and git before installing ctgan:
