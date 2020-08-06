@@ -14,7 +14,7 @@ The package contains the following additional features:
  
  
 ### Important Caveats!!!   
-The username/password feature is not secure as the username/passwords are stored in an unencrypted dictionary. This feature exists for proof of concept and as a simple method to separate models/data between TRUSTED users on the same server.
+The username/password feature is not secure as the username/passwords are stored in an unencrypted dictionary. This feature exists for proof of concept only and as a simple method to separate models/data between TRUSTED users on the same server.
  
 In the original ctgan package, you must specify which columns are discrete before fitting. For simplicity I have setup this package to automatically treat 'string' columns as 'discrete' and treat all numerical columns as continuous. In the future I will try and add the ability for users to specify discrete_columns. 
 
@@ -28,23 +28,33 @@ You can install from
 * updating the **ctgan_host/config.sh** to point towards your server 
 * Place any original data files (.csv format) into the **ctgan_host/original_data** folder
 
-You will also need to install the required packages onto the server. From the **ctgan_server** folder:
+You will also need to install the required packages onto the server:
 
 ``` r
-pip3 install -r requirements.txt
+pip3 install ctgan --no-cache-dir. #--no-cache-dir stops ram being used up during install process
+```
+
+If you're using a fresh linux server then you'll probably need to install pip and git before installing ctgan:
+
+``` r
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install python3-pip
+sudo apt -y install git
+git clone https://github.com/oregonpillow/ctgan-server-cli.git
+pip3 install ctgan --no-cache-dir
 ```
 
 ## Requirements
 
 * CTGAN has been developed and tested on Python 3.5, 3.6 and 3.7
-* ctgan_server package tested on Python 3.6.9, Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-66-generic x86_64)
-* It is assumed you have already added your public ssh key to the known lists on your server. An [article](https://linuxhandbook.com/add-ssh-public-key-to-server/) explaining how to do this.
+* ctgan_server package tested on Python 3.6.9, Ubuntu 18.04.3 LTS
+* It is assumed you have already added your public ssh key to the known lists on your server and have access to it. An [article](https://linuxhandbook.com/add-ssh-public-key-to-server/) explaining how to do this.
 
 
 ## Example
 
 A quick example:
-
 
 ``` r
 bash fit.sh
